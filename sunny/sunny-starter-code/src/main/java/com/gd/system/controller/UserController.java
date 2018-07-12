@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping
-@Api
+@Api(value = "用户Controller",tags = "用户操作接口")
 public class UserController   {
     private static List<User> userList = new ArrayList<>();
 

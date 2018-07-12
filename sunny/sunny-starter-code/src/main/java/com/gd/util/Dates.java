@@ -149,8 +149,8 @@ public class Dates {
     /**
      * 解析日期
      *
-     * @param date 日期
      *
+     * @param date 日期
      * @param pattern 格式 参考：{@link Dates.Pattern}
      *
      * @return 解析后的日期，默认格式：yyyy-MM-dd HH:mm:ss
