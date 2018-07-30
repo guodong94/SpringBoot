@@ -51,7 +51,7 @@ server:
   port: 8080
   tomcat:
     uri-encoding: UTF-8
-  context-path: /taleblog
+  #context-path: /taleblog
 #七牛的存储
 qiniu:
   imgSpace: ycimgs
