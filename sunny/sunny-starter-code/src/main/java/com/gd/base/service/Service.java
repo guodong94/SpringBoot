@@ -1,12 +1,14 @@
 package com.gd.base.service;
 
+import com.gd.base.ProxySelf;
+
 import java.util.List;
 
 /**
  * Service通用接口
  * Created by Administrator on 2018/7/6.
  */
-public interface Service<T> {
+public interface Service<T>{
     //
     // insert
     // ----------------------------------------------------------------------------------------------------
@@ -93,7 +95,7 @@ public interface Service<T> {
      *
      * @param ids 类似1,2,3
      */
-    int delete(String ids);
+    //int delete(String ids);
 
     /**
      * 根据主键删除多个实体，ID数组

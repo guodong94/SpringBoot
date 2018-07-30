@@ -1,23 +1,25 @@
 package com.gd.base.service;
 
-import com.gd.base.dto.BaseDTO;
 import com.gd.base.mapper.Mapper;
+import com.gd.base.dto.BaseDTO;
 import com.gd.constants.Constants;
 import com.gd.util.Reflections;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+
 import javax.annotation.PostConstruct;
 import javax.persistence.*;
 import java.lang.reflect.*;
 import java.util.List;
 
+
 /**
  * 基础Service实现类
  * Created by Administrator on 2018/7/6.
  */
-public abstract class BaseService<T> implements Service<T>  {
+public abstract class BaseService<T, Integer> implements Service<T>  {
     @Autowired
     private Mapper<T> mapper;
 
@@ -40,7 +42,7 @@ public abstract class BaseService<T> implements Service<T>  {
 
     @Transactional(rollbackFor = Exception.class)
     public List<T> insert(List<T> recordList) {
-        mapper.insertList(recordList);
+       // mapper.insertList(recordList);
         return recordList;
     }
 
@@ -128,6 +130,8 @@ public abstract class BaseService<T> implements Service<T>  {
         }
         return count;
     }
+
+
 
     //
     // all operate. insert or update or delete
@@ -253,7 +257,7 @@ public abstract class BaseService<T> implements Service<T>  {
     }
 
     public List<T> select(String ids) {
-        return mapper.selectByIds(ids);
+        return null;
 
 
     }

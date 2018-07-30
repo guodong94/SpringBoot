@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.gd.base.dto.BaseDTO;
 import com.gd.util.Dates;
 
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -12,12 +13,16 @@ import java.util.Date;
  * Created by Administrator on 2018/7/5.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name = "SYS_USER")
 public class User extends BaseDTO {
     private static final long serialVersionUID = -7395431342743009038L;
 
     /**
      * 用户ID
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @OrderBy("DESC")
     private Long userId;
     /**
      * 用户名
